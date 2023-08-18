@@ -1,0 +1,25 @@
+apiVersion: authorization.openshift.io/v1
+kind: ClusterRole
+metadata:
+  annotations:
+  name: checkpoint-reader
+rules:
+- apiGroups:
+  - ""
+  attributeRestrictions: null
+  resources:
+  - namespaces
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  - network.openshift.io
+  attributeRestrictions: null
+  resources:
+  - netnamespaces
+  verbs:
+  - get
+  - list
+  - watch

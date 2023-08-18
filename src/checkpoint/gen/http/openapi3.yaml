@@ -1,0 +1,199 @@
+openapi: 3.0.3
+info:
+  title: Checkpoint Openshfit API
+  description: Backend presenting rules for Checkpoint based on ocp definition
+  version: "1.0"
+servers:
+- url: http://localhost:8080
+paths:
+  /v1/egress:
+    get:
+      tags:
+      - rules
+      summary: egressList rules
+      description: List all egress rules
+      operationId: rules#egressList
+      responses:
+        "200":
+          description: OK response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgressListResponseBody'
+              example:
+                description: nrq
+                objects:
+                - description: nif
+                  id: ae5
+                  name: rcw
+                  ranges:
+                  - Velit ipsum magnam enim minima.
+                  - Magni rerum voluptas voluptatem ex ut.
+                - description: nif
+                  id: ae5
+                  name: rcw
+                  ranges:
+                  - Velit ipsum magnam enim minima.
+                  - Magni rerum voluptas voluptatem ex ut.
+                - description: nif
+                  id: ae5
+                  name: rcw
+                  ranges:
+                  - Velit ipsum magnam enim minima.
+                  - Magni rerum voluptas voluptatem ex ut.
+                - description: nif
+                  id: ae5
+                  name: rcw
+                  ranges:
+                  - Velit ipsum magnam enim minima.
+                  - Magni rerum voluptas voluptatem ex ut.
+                version: yp9
+  /v1/ingress:
+    get:
+      tags:
+      - rules
+      summary: ingressList rules
+      description: List all ingress rules
+      operationId: rules#ingressList
+      responses:
+        "200":
+          description: OK response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgressListResponseBody'
+              example:
+                description: nrq
+                objects:
+                - description: nif
+                  id: ae5
+                  name: rcw
+                  ranges:
+                  - Velit ipsum magnam enim minima.
+                  - Magni rerum voluptas voluptatem ex ut.
+                - description: nif
+                  id: ae5
+                  name: rcw
+                  ranges:
+                  - Velit ipsum magnam enim minima.
+                  - Magni rerum voluptas voluptatem ex ut.
+                - description: nif
+                  id: ae5
+                  name: rcw
+                  ranges:
+                  - Velit ipsum magnam enim minima.
+                  - Magni rerum voluptas voluptatem ex ut.
+                - description: nif
+                  id: ae5
+                  name: rcw
+                  ranges:
+                  - Velit ipsum magnam enim minima.
+                  - Magni rerum voluptas voluptatem ex ut.
+                version: yp9
+components:
+  schemas:
+    EgressListResponseBody:
+      type: object
+      properties:
+        description:
+          type: string
+          description: description of the object
+          default: ""
+          example: c47
+          maxLength: 100
+        objects:
+          type: array
+          items:
+            $ref: '#/components/schemas/StoredCheckpointRuleResponseBody'
+          description: Rulesets
+          example:
+          - description: nif
+            id: ae5
+            name: rcw
+            ranges:
+            - Velit ipsum magnam enim minima.
+            - Magni rerum voluptas voluptatem ex ut.
+          - description: nif
+            id: ae5
+            name: rcw
+            ranges:
+            - Velit ipsum magnam enim minima.
+            - Magni rerum voluptas voluptatem ex ut.
+          - description: nif
+            id: ae5
+            name: rcw
+            ranges:
+            - Velit ipsum magnam enim minima.
+            - Magni rerum voluptas voluptatem ex ut.
+        version:
+          type: string
+          description: version of the ruleset
+          default: "1.0"
+          example: vy5
+          maxLength: 8
+      description: EgressListResponseBody result type (default view)
+      example:
+        description: wwa
+        objects:
+        - description: nif
+          id: ae5
+          name: rcw
+          ranges:
+          - Velit ipsum magnam enim minima.
+          - Magni rerum voluptas voluptatem ex ut.
+        - description: nif
+          id: ae5
+          name: rcw
+          ranges:
+          - Velit ipsum magnam enim minima.
+          - Magni rerum voluptas voluptatem ex ut.
+        - description: nif
+          id: ae5
+          name: rcw
+          ranges:
+          - Velit ipsum magnam enim minima.
+          - Magni rerum voluptas voluptatem ex ut.
+        version: 2fd
+    StoredCheckpointRuleResponseBody:
+      type: object
+      properties:
+        description:
+          type: string
+          description: description of the object
+          default: ""
+          example: det
+          maxLength: 100
+        id:
+          type: string
+          description: uuid of the object
+          default: ""
+          example: 0fg
+          maxLength: 100
+        name:
+          type: string
+          description: Return the name of the record
+          default: generic-object
+          example: odq
+          maxLength: 100
+        ranges:
+          type: array
+          items:
+            type: string
+            example: Occaecati illo.
+          description: Ip adresss
+          example:
+          - Numquam officiis quia.
+          - Nostrum ab qui vel.
+          - Dolorum quos doloribus aperiam.
+          - Eaque ut nam laudantium maxime libero eum.
+      description: A StoredCheckpointRules describes a one rules (default view)
+      example:
+        description: mpf
+        id: 8va
+        name: djc
+        ranges:
+        - Fugit ex eius quibusdam veritatis.
+        - Esse possimus officia at cupiditate pariatur ut.
+tags:
+- name: rules
+  description: Service provides management for stored chekcpoint rules
