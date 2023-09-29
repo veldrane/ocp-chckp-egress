@@ -26,10 +26,10 @@ ensures access to the namespace and netnamespaces object must be assigned to the
 For right publishing the rules two annotation have to be added to the namespace object:
 
 checkpoint.com/egress-rules
-    - this annotation public rules for egress ip 
+    - this annotation publishes rules for egress ip 
 
 checkpoint.com/ingress-rules
-    - this annotation public rules for egress ip
+    - this annotation publishrs rules for egress ip
 
 ```
 example:
