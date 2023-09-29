@@ -29,7 +29,7 @@ checkpoint.com/egress-rules
     - this annotation publishes rules for egress ip 
 
 checkpoint.com/ingress-rules
-    - this annotation publishrs rules for egress ip
+    - this annotation publishes rules for egress ip
 
 ```
 example:
@@ -55,16 +55,16 @@ Rulesets must be present on the checkpoint side.
 
 ##### Egress
 
-Ip adress is get from netnamespace object, other solution is not supported
+Ip adress is got from netnamespace object, other solution is not supported
 
 ##### Ingress
 
-Ip address is get from external ip of the svc, usualy binded with keepalived ip adresses. Other solution is not supported.
+Ip address is got from external ip of the svc, usualy binded with keepalived ip adresses. Other solution is not supported.
 
 #### How it works
 
-After start chckpapi ask kubernetes api for all namespace object with annotation details and netnamespace objects,
-join all information together and present that in the json format supported by checkpoint part. This part is done by background process
+After start chckpapi asks kubernetes api for all namespace object with annotation details and netnamespace objects,
+join all information together and presents that in the json format supported by checkpoint part. This part is done by background process
 and it keeps repeating each 5 mins. Json is published from internal structers so its not possible to DoS k8s api by huge calling of 
 this svc. 
 
@@ -72,7 +72,7 @@ this svc.
 #### Is the chckpapi production ready ?
 
 Ehm probably no :). This tool was part of PoC project of integration between ocp and checkpoint infrastructure, but lots of things is
-missing. Code is not clean, helm chart and Dockerfile is missing as well (it's somewhere, but i am leazy to look for it ). Also definitiot
+missing. Code is not clean, helm chart and Dockerfile is missing as well (it's somewhere, but i am leazy to look for it ). Also definition
 of the svc account and better role for running this service is missing (some basic role object - probably sufficient is part of role directory).
 
 
